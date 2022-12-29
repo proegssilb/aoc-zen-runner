@@ -3,11 +3,6 @@ extern crate microbench;
 use std::cmp::Ordering;
 
 use aoc_runner_macros::{solver, generator, aoc};
-// use criterion::{Criterion, criterion_group, criterion_main, black_box, PlottingBackend};
-// use pprof::criterion::{PProfProfiler, Output};
-// use pprof::flamegraph::Options as FGOptions;
-
-// use microbench::{Options, retain, bench};
 
 type DataLine = (u16, u16, u16, u16);
 type DataLine2 = u64;
@@ -187,49 +182,3 @@ mod test {
 2-6,4-8
 "#;
 }
-
-// Auto-Genned Benches ----------------------------------------------
-
-// Microbench
-
-// fn run_benches() {
-//     let options = Options::default().time(Duration::from_secs(5));
-// 
-//     bench(&options, "Part 1 - tuple_parse / tuple_cmp", || _gen_lists::p1_1(retain(AOC_RAW_INPUT)) );
-//     bench(&options, "Part 1 - tuple_parse / tuple_bitbang", || _gen_lists::p1_2(retain(AOC_RAW_INPUT)) );
-//     bench(&options, "Part 1 - tuple_bitbang / tuple_bitbang", || _gen_lists::p1_4(retain(AOC_RAW_INPUT)) );
-//     bench(&options, "Part 1 - uint_bitbang / uint_cmp", || _gen_lists::p1_5(retain(AOC_RAW_INPUT)) );
-//     bench(&options, "Part 2 - tuple_bitbang / tuple_cmp", || _gen_lists::p2_1(retain(AOC_RAW_INPUT)) );
-//     bench(&options, "Part 2 - uint_bitbang / uint_cmp", || _gen_lists::p2_2(retain(AOC_RAW_INPUT)) );
-// }
-
-// Criterion
-
-// fn bench(c: &mut Criterion) {
-//     let mut group1 = c.benchmark_group("Part 1");
-//     group1.bench_function("tuple_parse/tuple_cmp", |b| b.iter(|| p1_1(black_box(AOC_RAW_INPUT))));
-//     group1.bench_function("tuple_parse/tuple_bitbang", |b| b.iter(|| p1_2(black_box(AOC_RAW_INPUT))));
-//     group1.bench_function("tuple_bitbang/tuple_bitbang", |b| b.iter(|| p1_4(black_box(AOC_RAW_INPUT))));
-//     group1.bench_function("uint_bitbang/uint_cmp", |b| b.iter(|| p1_5(black_box(AOC_RAW_INPUT))));
-//     group1.finish();
-//     let mut group2 = c.benchmark_group("Part 2");
-//     group2.bench_function("tuple_bitbang / tuple_cmp", |b| b.iter(|| p2_1(black_box(AOC_RAW_INPUT))));
-//     group2.bench_function("uint_bitbang / uint_cmp", |b| b.iter(|| p2_2(black_box(AOC_RAW_INPUT))));
-//     group2.finish();
-// }
-
-// criterion_group! {
-//     name = benches;
-//     config = Criterion::default()
-//         //.with_profiler(PProfProfiler::new(100, Output::Flamegraph(Some(FGOptions::default()))))
-//         .with_output_color(true)
-//         .with_plots()
-//         .plotting_backend(PlottingBackend::Plotters);
-//     targets = bench
-// }
-
-// criterion_main!(benches);
-
-// Auto-Genned Main ------------------------------------------------
-
-

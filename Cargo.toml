@@ -20,5 +20,5 @@ thiserror = "1.0.38"
 
 [[bench]]
 name = "benches"
-path = "src/test.rs"
+path = "src/day04.rs"
 harness = false

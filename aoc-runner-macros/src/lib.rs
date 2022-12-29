@@ -443,6 +443,7 @@ fn gen_main(day_num: u32) -> proc_macro2::TokenStream {
     quote! {
         const AOC_RAW_INPUT: &str = include_str!(#input_file);
 
+        #[cfg(not(test))]
         fn main() {
             println!("## AOC 2022, Day {} ----------", #day_num);
             let p1len = _gen_lists::P1_SOLUTIONS.len();
@@ -488,7 +489,7 @@ fn gen_main(day_num: u32) -> proc_macro2::TokenStream {
     }
 }
 
-fn gen_microbench() -> proc_macro2::TokenStream {
+fn gen_quick_microbench() -> proc_macro2::TokenStream {
     quote! {
         mod bench_quick {
             use std::time::Duration;
@@ -507,6 +508,42 @@ fn gen_microbench() -> proc_macro2::TokenStream {
                 }
             }
         }
+    }
+}
+
+fn gen_slow_microbench() -> proc_macro2::TokenStream {
+    quote! {
+        use pprof::criterion::{PProfProfiler, Output};
+        use pprof::flamegraph::Options as FGOptions;
+        use criterion::{Criterion, criterion_group, criterion_main, black_box};
+
+        fn bench(c: &mut Criterion) {
+            let mut group1 = c.benchmark_group("Part 1");
+            for (idx, solver_fn) in _gen_lists::P1_SOLUTIONS.iter().enumerate() {
+                let label = _gen_lists::P1_LABELS[idx];
+                group1.bench_function(label, |b| b.iter(|| solver_fn(black_box(AOC_RAW_INPUT))));
+            }
+            group1.finish();
+            let mut group2 = c.benchmark_group("Part 2");
+            for (idx, solver_fn) in _gen_lists::P2_SOLUTIONS.iter().enumerate() {
+                let label = _gen_lists::P2_LABELS[idx];
+                group2.bench_function(label, |b| b.iter(|| solver_fn(black_box(AOC_RAW_INPUT))));
+            }
+            group2.finish();
+        }
+
+        criterion_group! {
+            name = benches;
+            config = Criterion::default()
+                .with_profiler(PProfProfiler::new(100, Output::Flamegraph(None)))
+                .with_output_color(true)
+                .with_plots();
+            targets = bench
+        }
+
+        // We need this call to happen only when benchmarking. This is the closest we can get.
+        #[cfg(test)]
+        criterion_main!(benches);
     }
 }
 
@@ -529,7 +566,8 @@ pub fn aoc(args: TokenStream, item: TokenStream) -> TokenStream {
     let mut item_ts = item.into_token_stream();
 
     item_ts.extend(mod_extension);
-    item_ts.extend(gen_microbench());
+    item_ts.extend(gen_quick_microbench());
+    item_ts.extend(gen_slow_microbench());
     item_ts.extend(gen_main(macro_args.day_num));
 
     item_ts.into()
