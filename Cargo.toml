@@ -1,24 +1,5 @@
-[package]
-name = "aoc-zen-runner"
-version = "0.1.0"
-edition = "2021"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
-[[bin]]
-name = "day04"
-path = "src/day04.rs"
-
-[dependencies]
-aoc-runner-macros = { path = "./aoc-runner-macros" }
-clap = { version = "4.0.29", features = ["derive", "env", "unicode"] }
-criterion = "0.4.0"
-microbench = "0.5.0"
-plotters = "0.3.4"
-pprof = { version = "0.11.0", features = ["criterion", "flamegraph"] }
-thiserror = "1.0.38"
-
-[[bench]]
-name = "benches"
-path = "src/day04.rs"
-harness = false
+[workspace]
+members = [
+    "zen-aoc-macros",
+    "zen-aoc-cargo-ext",
+]
