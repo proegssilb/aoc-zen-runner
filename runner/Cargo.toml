@@ -30,8 +30,8 @@ directories = "5.0.1"
 liquid = "0.26.4"
 regex = "1.10.3"
 reqwest = { version = "0.11.24", features = ["blocking", "cookies", "gzip", "brotli", "deflate"] }
-serde = { version = "1.0.196", features = ["derive", "serde_derive"] }
-serde_derive = "1.0.196"
+serde = { version = "1.0.197", features = ["derive", "serde_derive"] }
+serde_derive = "1.0.197"
 thiserror = "1.0.57"
 toml_edit = "0.22.5"
 trycmd = { version = "0.15.0", features = [] }
