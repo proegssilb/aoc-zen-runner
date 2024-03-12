@@ -21,7 +21,7 @@ name="cargo-aoc"
 path="src/main.rs"
 
 [dependencies]
-anyhow = { version = "1.0.79", features = ["backtrace"] }
+anyhow = { version = "1.0.81", features = ["backtrace"] }
 cargo_metadata = "0.18.1"
 chrono = "0.4.34"
 chrono-tz = "0.8.6"
