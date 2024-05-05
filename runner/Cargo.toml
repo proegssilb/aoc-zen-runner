@@ -29,7 +29,7 @@ clap = { version = "4.5.0", features = ["derive", "cargo", "env", "unicode", "st
 directories = "5.0.1"
 liquid = "0.26.4"
 regex = "1.10.3"
-reqwest = { version = "0.11.24", features = ["blocking", "cookies", "gzip", "brotli", "deflate"] }
+reqwest = { version = "0.12.0", features = ["blocking", "cookies", "gzip", "brotli", "deflate"] }
 serde = { version = "1.0.196", features = ["derive", "serde_derive"] }
 serde_derive = "1.0.196"
 thiserror = "1.0.57"
