@@ -35,7 +35,7 @@ pprof = { version = "0.13.0", features = ["flamegraph", "protobuf", "criterion"]
 bit-set = "0.5.3"
 grid = "0.13.0"
 gridly_grids = "0.5.0"
-itertools = "0.12.1"
+itertools = "0.13.0"
 petgraph = "0.6.4"
 rayon = "1.8.1"
 regex = "1"
