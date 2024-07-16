@@ -32,7 +32,7 @@ aoc-zen-runner-macros = {path = "../../aoc-zen-runner-macros"}
 microbench = "0.5.0"
 criterion = "0.5.1"
 pprof = { version = "0.13.0", features = ["flamegraph", "protobuf", "criterion"] }
-bit-set = "0.5.3"
+bit-set = "0.8.0"
 grid = "0.13.0"
 gridly_grids = "0.5.0"
 itertools = "0.12.1"
