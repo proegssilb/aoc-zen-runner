@@ -24,7 +24,7 @@ path="src/main.rs"
 anyhow = { version = "1.0.79", features = ["backtrace"] }
 cargo_metadata = "0.18.1"
 chrono = "0.4.34"
-chrono-tz = "0.8.6"
+chrono-tz = "0.10.0"
 clap = { version = "4.5.0", features = ["derive", "cargo", "env", "unicode", "string"] }
 directories = "5.0.1"
 liquid = "0.26.4"
