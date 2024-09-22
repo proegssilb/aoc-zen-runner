@@ -33,7 +33,7 @@ microbench = "0.5.0"
 criterion = "0.5.1"
 pprof = { version = "0.13.0", features = ["flamegraph", "protobuf", "criterion"] }
 bit-set = "0.5.3"
-grid = "0.13.0"
+grid = "0.15.0"
 gridly_grids = "0.5.0"
 itertools = "0.12.1"
 petgraph = "0.6.4"
