@@ -22,6 +22,6 @@ syn = { version = "2.0.48", features = ["full", "extra-traits", "fold", "visit",
 thiserror = "2.0.0"
 microbench = "0.5.0"
 num-format = { version = "0.4.4", features = ["with-system-locale"] }
-criterion =  { version = "0.5.1", features = ["rayon", "plotters", "cargo_bench_support", "html_reports"]}
+criterion =  { version = "0.8.0", features = ["rayon", "plotters", "cargo_bench_support", "html_reports"]}
 plotters = "0.3.5"
 cargo_metadata = "0.19.0"
