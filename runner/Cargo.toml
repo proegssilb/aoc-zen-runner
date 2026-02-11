@@ -33,5 +33,5 @@ reqwest = { version = "0.12.0", features = ["blocking", "cookies", "gzip", "brot
 serde = { version = "1.0.196", features = ["derive", "serde_derive"] }
 serde_derive = "1.0.196"
 thiserror = "2.0.0"
-toml_edit = "0.22.5"
+toml_edit = "0.25.0"
 trycmd = { version = "0.15.0", features = [] }
